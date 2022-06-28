@@ -1,0 +1,150 @@
+ div {
+  border: solid 5px red;
+  width: 100px;
+  margin: 5px;
+}
+
+div {
+  width: 300px;
+  margin: 15px; 
+} 
+
+ #d3 { 
+  border: solid 5px blue;
+} 
+
+.d2{
+  border: solid 5px green;
+}
+
+[name="d3"] {
+  border: solid 5px black;
+}
+
+a {
+  color: brown;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:visited {
+  color: black;
+}
+
+*:focus {
+  outline-color: yellow;
+}
+
+.bluebg {
+  border: 10px dotted green;
+}
+
+.bluebg[data-dingri="pokiri"]  { 
+  border: 10px dotted pink;
+}
+
+/*psuedo elements -- START */
+.d2>li::marker{ 
+  color: blue;
+  content: '##';
+}
+
+span::before {
+  content: 'before - ';
+}
+
+/*psuedo elements -- END */
+
+/*psuedo classes -- START */
+p::first-letter {
+  color: aqua;
+}
+
+p::selection {
+  color: blueviolet;
+}
+
+ul li:nth-child(2) {
+  color: aqua;
+}
+
+ul li:nth-of-type(3) {
+  color: aqua;
+}
+
+/*psuedo classes -- END */
+
+/*Specificity -- START */
+
+#d3 ul li::marker { /*only applies to any children */
+  content: '-- space '
+}
+
+#d3>ul li::marker { /*only applies to immediate children */
+  content: '-- direct '
+}
+
+input ~ div { /*applies to any siblings */
+  border: solid 5px green !important;
+}
+
+ input + div {  /*only applies to immediate siblings */
+  border: solid 5px green !important;
+}
+
+/*Specificity -- END */
+
+/* 
+# different CSS selectors
+* universal                                            5    0 0 0
+id #<id>                                               2    1 0 0
+class .<classname> or psuedo classes, attribute        3    0 1 0
+tagname <element>                                      4    0 0 1
+inline styles                                          1    
+
+# psuedo classes
+:visited
+:active
+:disabled
+:required
+:focus
+:not()
+:is
+:nth-child()
+:nth-of-type()
+:nth-last-of-type()
+:first-of-type
+
+# psuedo elements
+::after
+::before
+::marker
+::selection
+
+
+# box model
+margin > outline > border > padding > content
+
+
+# important properties 
+
+width
+height
+color
+background
+border
+position
+display
+margin
+padding
+outline
+top
+bottom
+left
+right
+font
+
+*/
+
